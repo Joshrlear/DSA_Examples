@@ -1,4 +1,4 @@
-/* function quickSort(arr, start = 0, end = arr.length) {
+function quickSort(arr, start = 0, end = arr.length) {
     // breaking condition
     if (start >= end) { return arr }
     // define middle with partition
@@ -39,9 +39,9 @@ function swap(arr, i, j) {
     arr[j] = temp
 }
 
-console.log(quickSort([5,4,19,2,10,11,7])) */
+console.log(quickSort([5,4,19,2,10,11,7]))
 
-/* function quickSort(arr, start = 0, end = arr.length) {
+function quickSort(arr, start = 0, end = arr.length) {
     // breaking condition, when only one value in array
     if (start > end - 1) { return arr }
     // define middle from partition
@@ -79,4 +79,4 @@ function swap(arr, i, j) {
     arr[j] = temp
 }
 
-console.log(quickSort([5,4,19,2,10,11,7])) */
+console.log(quickSort([5,4,19,2,10,11,7]))
