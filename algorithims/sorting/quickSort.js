@@ -39,16 +39,18 @@ function swap(arr, i, j) {
     arr[j] = temp
 }
 
-console.log(quickSort([5,4,19,2,10,11,7]))
+//console.log(quickSort([5,4,19,2,10,11,7]))
 
 function quickSort(arr, start = 0, end = arr.length) {
     // breaking condition, when only one value in array
+    //console.log(start, end)
     if (start > end - 1) { return arr }
-    // define middle from partition
-    const middle = partition(arr, start, end - 1)
+    // define pivot from partition
+    const pivot = partition(arr, start, end - 1)
+    //console.log('we are here:', pivot)
     // resurive calls with left and right
-    quickSort(arr, start, middle)
-    quickSort(arr, middle + 1, end)
+    quickSort(arr, start, pivot)
+    quickSort(arr, pivot + 1, end)
     // return array
     return arr
 }
@@ -57,8 +59,10 @@ function partition(arr, start, end) {
     // define pivot "index" (use 0) and "pivot" value (use last in arr)
     let pivot = arr[end]
     let j = start
+    //console.log('end:', end)
     // loop through arr starting at "start"
     for (let i = start; i < end; i++) {
+        //console.log(arr, arr[i], arr[j], pivot)
         // check if index is less than pivot "value"
         if (arr[i] <= pivot) {
             // swap index and pivot "index"
@@ -72,6 +76,7 @@ function partition(arr, start, end) {
 }
 
 function swap(arr, i, j) {
+    //console.log('swapping:', arr[i], arr[j])
     // define temp for i
     const temp = arr[i]
     // swap values
@@ -79,4 +84,5 @@ function swap(arr, i, j) {
     arr[j] = temp
 }
 
-console.log(quickSort([5,4,19,2,10,11,7]))
+//console.log(quickSort([5,4,19,2,10,11,7]))
+console.log(quickSort([5,4,7,2,11,10,19]))
